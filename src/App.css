@@ -1,0 +1,9 @@
+:root {
+  --main-colour: white;
+  --secondary-colour: black;
+  --accent-colour: #00ff00;
+}
+
+.App {
+  background-color: black;
+}

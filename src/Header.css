@@ -1,0 +1,37 @@
+:root {
+  --main-colour: white;
+  --secondary-colour: black;
+  --accent-colour: #00ff00;
+}
+
+.header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1em;
+  color: var(--main-colour);
+  background-color: var(--secondary-colour);
+  border-bottom: 1px solid var(--accent-colour);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.title > p {
+  margin-left: 0.75em;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.title-icon {
+  object-fit: contain;
+  height: 1.5em !important;
+  width: 1.5em !important;
+  color: var(--accent-colour);
+}
+
+.header-right {
+  display: flex;
+}

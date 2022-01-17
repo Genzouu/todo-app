@@ -5,11 +5,9 @@ import ListEntry from "./ListEntry";
 function List() {
   return (
     <div className="list">
-      <ListEntry title="Task 1" desc="This is a description" />
-      <ListEntry title="Task 2" desc="This is a description" />
-      <ListEntry title="Task 3" desc="This is a description" />
-      <ListEntry title="Task 4" desc="This is a description" />
-      <ListEntry title="Task 5" desc="This is a description" />
+         {[0, 1, 2, 3, 4].map((index: number) => (
+            <ListEntry title={"Task " + (index + 1)} desc="This is a description" index={index} key={index} />
+         ))}
     </div>
   );
 }

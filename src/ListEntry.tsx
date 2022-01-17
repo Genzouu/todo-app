@@ -9,17 +9,27 @@ import InlineMenu from "./InlineMenu";
 interface ListEntryProps {
   title: string;
   desc: string;
+  index: number;
 }
 
-function ListEntry({ title, desc }: ListEntryProps, callback: any) {
-  const [expand, setExpand] = useState(false);
-  const [menu, setMenu] = useState(false);
+function ListEntry({ title, desc, index }: ListEntryProps, callback: any) {
+   const [expand, setExpand] = useState(false);
+   const [menu, setMenu] = useState(false);
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      setMenu(false);
-    }
-  });
+   document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+         setMenu(false);
+      }
+   });
+
+  const manageMenuBlur = (e: React.FocusEvent<HTMLButtonElement, Element>) => {
+      const menuIcon = (document.getElementsByClassName("menuIcon")[index] as HTMLButtonElement);
+      if (menuIcon.parentElement !== (e.relatedTarget?.parentElement?.parentElement)) {
+         setMenu(false); 
+      } else {
+         menuIcon.focus();
+      }
+  }
 
   return (
     <div className="listEntry">
@@ -33,10 +43,10 @@ function ListEntry({ title, desc }: ListEntryProps, callback: any) {
         <div className="listEntry-header-widgets">
           <button
             className="menuIcon"
-            onClick={() => setMenu(!menu)}
-            onBlur={() => setMenu(false)}
+            onClick={() => { setMenu(!menu);}}
+            onBlur={(e) => manageMenuBlur(e)}
           >
-            <MoreVertIcon />
+            <MoreVertIcon />           
           </button>
           {menu && (
             <InlineMenu

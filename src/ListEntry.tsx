@@ -5,6 +5,7 @@ import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import EditIcon from "@mui/icons-material/Edit";
 import InlineMenu from "./InlineMenu";
+import { FlareSharp } from "@mui/icons-material";
 
 interface ListEntryProps {
   title: string;
@@ -27,7 +28,7 @@ function ListEntry({ title, desc, index }: ListEntryProps, callback: any) {
       if (menuIcon.parentElement !== (e.relatedTarget?.parentElement?.parentElement)) {
          setMenu(false); 
       } else {
-         menuIcon.focus();
+         setTimeout(() => menuIcon.focus(), 1);
       }
   }
 
@@ -45,6 +46,7 @@ function ListEntry({ title, desc, index }: ListEntryProps, callback: any) {
             className="menuIcon"
             onClick={() => { setMenu(!menu);}}
             onBlur={(e) => manageMenuBlur(e)}
+            onFocus={() => console.log("focused!")}
           >
             <MoreVertIcon />           
           </button>

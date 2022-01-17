@@ -1,0 +1,32 @@
+.listEntry {
+  border: 1px solid #00ff00;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5em;
+  padding: 0.5em 0.25em;
+}
+
+.listEntry-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.listEntry-header-main {
+  display: flex;
+}
+
+.expandIcon {
+  color: white;
+  background-color: black;
+  border: none;
+}
+
+.menuIcon {
+  color: white;
+  background-color: black;
+  border: none;
+}
+
+.listEntry-body {
+  padding: 0.5em 2em;
+}

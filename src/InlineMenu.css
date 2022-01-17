@@ -1,0 +1,21 @@
+.inlineMenu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid #00ff00;
+}
+
+.inlineMenu-item {
+  display: flex;
+  padding: 0.5em;
+
+  border: none;
+  color: white;
+  background-color: black;
+}
+
+.inlineMenu-item:hover {
+  color: black;
+  background-color: #00ff00;
+}
